@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{%load crispy_forms_tags%}
+{%block content%}
+{%for m in messages%}
+{% comment %} <small {%if m.tags%} class='{{m.tags}}' {% endif %} >{{m}}</small> {% endcomment %}
+<small{% if m.tags %} class="{{ m.tags }}"{% endif %}>{{ m }}</small> 
+
+{% endfor %}
+
+<h1>Welcome to profile</h1>
+<br>
+<br>
+
+<a class='btn btn-warning' href="{% url 'change_pass' %}">Change Password</a>
+<a class='btn btn-warning' href="{% url 'change_pass_easy' %}">Forgot old Password ?</a>
+
+
+
+{% endblock %}
